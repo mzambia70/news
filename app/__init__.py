@@ -15,7 +15,11 @@ def create_app(config_name):
     bootstrap.init_app(app)
 
     # Will add the views and forms
-    from . import main as mainblueprint
+    from .main import main as mainblueprint
     app.register_blueprint(mainblueprint)
+
+    from .requests import configure_request
+    configure_request(app)
+
 
     return app

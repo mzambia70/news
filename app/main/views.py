@@ -1,7 +1,7 @@
 # taking the temp and searches,then loads it
 from flask import render_template, request, redirect, url_for
 from . import main  # importing app instance
-from  app.requests import get_news, search_news
+from  app.requests import get_news, search_news, process_news
 from .models import review
 from .forms import ReviewForm
 Review = review.Review
