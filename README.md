@@ -12,6 +12,7 @@ To choose on the news
 To be able to read more on the news i have selected
 ## Behaviour Driven Development
 Behaviour	|Input|	Output
+--- | --- | ---
 choose on the type of news|	Display the news|	Read more on the news selected
 ### SetUp / Installation Requirements
 Prerequisites

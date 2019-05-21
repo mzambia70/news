@@ -14,14 +14,14 @@ class Sources:
 
 class News:
   '''
-  news class to define news objects
+  News class to define the News objects
   '''
 
-  def __init__(self, id, author, title, descrption, url, image, date):
+  def __init__(self, id, author, title, description, image, url, date):
     self.id = id
     self.author = author
     self.title = title
     self.description = description
-    self.url = url
     self.image = image
-    self.date = date
+    self.url = url
+    self. date = date

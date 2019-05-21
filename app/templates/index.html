@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
+<form>
+    <input type="text" name="news_query" placeholder="Search for news" class="form-control">
+    <input type="submit" value="Submit" class="btn btn-default">
+</form>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-
-</body>
-
-</html>
+{% for item in sources %}
+{{item.id}}
+{% endfor %}
+{% endblock %}
