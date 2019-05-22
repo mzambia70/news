@@ -1,22 +1,21 @@
-{% macro displayNewsList(news_list) %}
-<!-- Displaying reviews macro -->
-{% macro displayReviews(review_list) %}
-{% for review in review_list %}
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-    <h2> {{ review.title}} </h2>
-    <p> {{ review.review | truncate(30) }}</p>
+{% macro displaySourceList(source_list) %} {% for source in source_list %}
+<div class="col-sm-3">
+    <a href="/news/{{source.id}}">{{source.name}}</a>
 </div>
-{% endfor %}
-{% endmacro %}
-{% for movie in movie_list %}
-<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
-    <img src="{{ movie.poster }}" alt="{{ movie.title }} poster" class="img-responsive">
-    <li class="text-center">
-        <a href="/movie/{{movie.id}}">
-            {{ news.title|truncate(10)}}</a>
-    </li>
+{% endfor %} {% endmacro %} {% macro displayArticleList(articles_list) %} {% for article in articles_list %}
+<div class="col-sm-4">
+    <div class="card-deck mb-2">
+        <div class="card">
+            <img class="card-img-top .img-fluid" src="{{article.urlToImage}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{article.title}}</h5>
+                <p class="card-text">{{article.description}}</p>
+                <p class="card-text"><a href="{{article.url}}">Full Article </a></p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Published at: {{article.publishedAt}}</small>
+            </div>
+        </div>
+    </div>
 </div>
-
-{% endfor %}
-
-{% endmacro %}
+{% endfor %} {% endmacro %}

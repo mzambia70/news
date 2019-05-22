@@ -1,11 +1,89 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
+{% import 'macros.html' as macro %} 
 {% block content %}
-<form>
-    <input type="text" name="news_query" placeholder="Search for news" class="form-control">
-    <input type="submit" value="Submit" class="btn btn-default">
-</form>
+<div class="container-fluid mt-4">
+    <div class="row mt-4 mb-4">
 
-{% for item in sources %}
-{{item.id}}
-{% endfor %}
-{% endblock %}
+    </div>
+</div>
+<div class="container-fluid mt-4">
+    <div class="jumbotron mt-4">
+        <div id="generalNews">
+            <div class="card">
+                <div class="card-header">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><em>General Sources</em></h3>
+                    <div class="row">
+                        {{macro.displaySourceList(general)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="businessNews">
+            <div class="card">
+                <div class="card-header">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><em>Business</em></h3>
+                    <div class="row">
+                        {{macro.displaySourceList(business)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="technologyNews">
+            <div class="card">
+                <div class="card-header">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><em>Technology</em> </h3>
+                    <div class="row">
+                        {{macro.displaySourceList(technology)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sportsNews">
+            <div class="card">
+                <div class="card-header">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><em>Sports</em> </h3>
+                    <div class="row">
+                        {{macro.displaySourceList(sports)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="healthNews">
+            <div class="card">
+                <div class="card-header">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><em>Health</em> </h3>
+                    <div class="row">
+                        {{macro.displaySourceList(health)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="entertainmentNews">
+            <div class="card">
+                <div class="card-header">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><em>Entertainment</em></h3>
+                    <div class="row">
+                        {{macro.displaySourceList(entertainment)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

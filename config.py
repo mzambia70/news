@@ -1,24 +1,26 @@
-import os #enabling our app to interact with os dependant functionalty
-
+import os
 
 class Config:
-  '''
-  General configuration parent class
-  '''
-  pass
-  NEWS_SOURCE_URL = 'https://newsapi.org/v2/sources?category={}&apiKey={}'
-  NEWS_BASE_URL ='https://newsapi.org/v2/everything?q={}&apiKey={}'
-  NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
-  SECRET_KEY = os.environ.get('SECRET_KEY')
+    '''
+    General configuration parent class
+    '''
+    pass
+
+    NEWS_BASE_API_URL ='https://newsapi.org/v2/sources?language=en&category={}&apiKey=35c7d8f389324702bf046aae6f6fc72e'
+    SOURCE_NEWS_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=35c7d8f389324702bf046aae6f6fc72e'
+    NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
+    SECRET_KEY = os.environ.get('9\xc52\xac\x8b\xb0\x9f\xc6\xf6\xda')
+
+
 
 class ProdConfig(Config):
-  '''
-  productoin configuration child class
-  
-  Args:
-       config: the parent configuratoin class with General configuration settings
-  '''
-  pass
+    '''
+    Production configuration child class
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    pass
+
 
 class DevConfig(Config):
     '''
@@ -26,10 +28,10 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-# enabling the debug mode in our app
+
     DEBUG = True
 
 config_options = {
-'development':DevConfig,
-'production':ProdConfig
+    'development': DevConfig,
+    'production': ProdConfig
 }
